@@ -1,0 +1,25 @@
+{%extends "base.html" %}
+{% block content %}
+<div class ="clickable-table">
+    <h3>Στελέχη</h3>
+    <table>
+    <thead>
+        <tr>
+            <th>Όνομα</th>
+            <th>ID</th>
+            <th>-</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for result in results %}
+        <tr >
+            <td data-href = "http://127.0.0.1:5000/member/{{result[0]}}">{{result[1]}}</td>
+            <td>{{result[0]}}</td>
+            <td data-href = "http://127.0.0.1:5000/deletion/{{table}}/{{term1}}/{{result[0]}}">Διαγραφή στελέχους</td>
+        </tr>
+        {%endfor%}
+    </tbody>
+    </table>
+</div>
+</div>
+{% endblock %}

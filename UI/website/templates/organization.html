@@ -1,0 +1,38 @@
+{%extends "base.html" %}
+{% block content %}
+<div class ="clickable-table">
+    <h3> Οργανισμός με ID: {{id}}</h3>
+    <table >
+    <thead>
+        <tr>
+            <th>Εργα του Οργανισμού </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for result in results %}
+        <tr>
+            <td data-href="http://127.0.0.1:5000/project/{{result[1]}}">{{result[0]}}</td>
+        </tr>
+        {%endfor%}
+    </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Ερευνητές που εργάζονται στον οργανισμό</th>
+                <th>-</th>
+            </tr>  
+        </thead>
+        <tbody>
+            {% for result1 in results1 %}
+            <tr >
+                <td data-href="http://127.0.0.1:5000/researcher/{{result1[2]}}">{{result1[0]}} {{result1[1]}}</td>
+                <td data-href="http://127.0.0.1:5000/deletion/{{table1}}/{{id1}}/{{result1[2]}}">Απόλυση ερευνητή</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+</div>
+{% endblock %}
