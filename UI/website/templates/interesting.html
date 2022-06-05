@@ -1,0 +1,50 @@
+{%extends "base.html" %}
+{% block content %}
+<label>Διαλέξτε πεδίο</label>
+<form method = "POST" action= "#">
+    <select name ="field_id">
+        <option value =''>Κενό</option>
+        {%for result in results%}
+        <option value = "{{result[0]}}">{{result[1]}}</option>
+        {%endfor%}
+    </select>
+    <p><input type = "submit" value = "submit"/></p>
+</form>
+
+
+<script>
+    $(function(){
+      // bind change event to select
+      $('#dynamic_select').on('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+</script>
+<div class ="clickable-table">
+    <h3>Αποτελέσματα</h3>
+    <table>
+    <thead>
+        <tr>
+            <th>Όνομα έργου</th>
+            <th>Όνομα ερευνητή</th>
+            <th>Επίθετο ερευνητή</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for record in records %}
+        <tr>
+            <td>{{record[0]}}</td>
+            <td>{{record[1]}}</td>
+            <td>{{record[2]}}</td>
+        </tr>
+        {%endfor%}
+    </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

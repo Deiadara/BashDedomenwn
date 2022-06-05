@@ -1,0 +1,32 @@
+{%extends "base.html" %}
+{% block content %}
+<label>Διαλέξτε τι θέλετε να προσθέσετε</label>
+<select id ="dynamic_select" >
+    <option value = "http://127.0.0.1:5000/input_company">Οργανισμός-Εταιρεία</option>
+    <option value = "http://127.0.0.1:5000/input_university">Οργανισμός-Πανεπιστήμιο</option>
+    <option value = "http://127.0.0.1:5000/input_research_center">Οργανισμός-Ερευνητικό κέντρο</option>
+    <option value = "http://127.0.0.1:5000/input_researcher">Ερευνητής</option>
+    <option value = "http://127.0.0.1:5000/input_project">Έργο/Επιχορήγηση</option>
+    <option value = "http://127.0.0.1:5000/input_programme">Πρόγραμμα</option>
+    <option value = "http://127.0.0.1:5000/input_member">Στέλεχος</option>
+    <option value = "http://127.0.0.1:5000/input_deliverable">Παραδοτέο</option>
+    <option value = "http://127.0.0.1:5000/input_field">Επιστημονικό Πεδίο</option>
+</select>
+
+
+<script>
+    $(function(){
+      // bind change event to select
+      $('#dynamic_select').on('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+</script>
+
+
+
+{% endblock %}

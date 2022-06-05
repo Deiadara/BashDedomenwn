@@ -1,0 +1,68 @@
+/* STATIC VARIABLES */
+:root {
+    /* for DARK */
+    --font-color-dark: white;
+    --bg-color-dark: #212529;
+
+    /* for LIGHT */
+
+    /* Borders */
+    --border-radius: 15px;
+}
+
+* {
+    position: relative;
+    font-family: jura;
+}
+
+html, body {
+    color: var(--font-color-dark);
+    width: 100%;
+    height: 100%;
+}
+
+#backdrop-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scale(1.3);
+}
+
+#backdrop-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* frosted glass effect */
+    background-color: rgba(50, 50, 50, .5);  
+    backdrop-filter: blur(6px);
+}
+
+#contextMenu {
+    position: absolute;
+    display: none;
+  }
+  
+
+/*Clickable Tables*/
+.clickable-table table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    width: 100%; 
+
+}
+.clickable-table table thead tr{
+    background-color: #FF0000
+}
+
+.clickable-table table tbody tr td:hover{
+    background: #FF0000;
+    cursor: pointer;
+}
+
+
+

@@ -1,0 +1,25 @@
+{%extends "base.html" %}
+{% block content %}
+<form action="#" method="POST">
+    <label>Προσθήκη Ερευνητή</label>
+    <p>Όνομα<input type = "text" name = "researcher_name"/></p>
+    <p>Επώνυμο <input type = "text" name = "surname"/></p>
+    <select name ="orgg">
+        {%for org in orgs%}
+        <option value = "{{org[0]}}">{{org[1]}}</option>
+        {%endfor%}
+    </select>
+  <select name="works" multiple>
+    <option value=""></option>
+    {%for proj in projs%}
+        <option value = "{{proj[0]}}">{{proj[1]}}</option>
+    {%endfor%}
+    </select>
+    <p>Φύλο<input type = "text" name = "gender"/></p>
+    <p>Ημερομηνία γέννησης<input type = "date" name = "date_of_birth"/></p>
+    <p>Υποβολή<input type = "submit" value = "submit"/></p>
+</form>
+
+
+
+{% endblock %}
